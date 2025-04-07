@@ -2,7 +2,7 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import { createProductTable } from "./models/product.model.js";
-process.setMaxListeners(0); // removes limit
+import productRoutes from "./routes/product.route.js";
 
 
 const app = express();
@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 
-app.use("/",productRoutes);
+app.use("/product",productRoutes);
 
 
 app.listen(5000, () => {

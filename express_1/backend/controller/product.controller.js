@@ -11,6 +11,7 @@ export const createProduct = async (req, res) => {
     );
     res.status(201).json({Success: true, message: 'Product created', product: result.rows[0]});
   } catch (err) {
+    console.log("Error "+err.message)
     res.status(500).json({Success: false,message:`Failed to create product`, error: err.message });
   }
 };
@@ -19,6 +20,7 @@ export const getAllProducts = async (req, res) => {
     const result = await pool.query('SELECT * FROM products');
     res.status(200).json(result.rows);
   } catch (err) {
+    console.log("Error "+err.message)
     res.status(500).json({ error: err.message });
   }
 };
@@ -32,6 +34,7 @@ export const getProductById = async (req, res) => {
     }
     res.json({Success: true, message: 'Product found', product:   result.rows[0]});
   } catch (err) {
+    console.log("Error "+err.message)
     res.status(500).json({ error: err.message });
   }
 };
@@ -50,6 +53,7 @@ export const updateProductById = async (req, res) => {
     }
     res.json(result.rows[0]);
   } catch (err) {
+    console.log("Error "+err.message)
     res.status(500).json({ error: err.message });
   }
 };

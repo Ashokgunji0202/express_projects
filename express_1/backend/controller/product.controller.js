@@ -14,8 +14,6 @@ export const createProduct = async (req, res) => {
     res.status(500).json({Success: false,message:`Failed to create product`, error: err.message });
   }
 };
-
-
 export const getAllProducts = async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM products');
@@ -30,9 +28,9 @@ export const getProductById = async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM products WHERE id = $1', [id]);
     if (result.rows.length === 0) {
-      return res.status(404).json({ message: 'Product not found' });
+      return res.status(404).json({Success: false, message: 'Product not found' });
     }
-    res.json(result.rows[0]);
+    res.json({Success: true, message: 'Product found', product:   result.rows[0]});
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

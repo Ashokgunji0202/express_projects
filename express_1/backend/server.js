@@ -10,7 +10,7 @@ const app = express();
 app.get("/", (req, res) => {    
     res.send("Hello from the backend");
 });
-app.use(express.json());
+app.use(express.json());// allows to use to accept JSON data in the body
 
 app.use("/product",productRoutes);
 

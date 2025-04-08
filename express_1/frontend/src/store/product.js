@@ -3,7 +3,8 @@ import { create } from 'zustand';
 export const useProductStore = create((set) => ({
   products: [],
   setProducts: (products) => set({ products }),
-
+  
+  // Craeting the product 
   createProduct: async (newProduct) => {
     
     try {
@@ -44,7 +45,7 @@ export const useProductStore = create((set) => ({
       });
       const data = await response.json();
 
-      // Update the state to remove the deleted product without a page refresh
+      // Update the state to remove the deleted product without a page refresh the main 
       set((state) => ({
         products: state.products.filter((product) => product.id !== productId),
       }));
@@ -65,7 +66,7 @@ export const useProductStore = create((set) => ({
       });
       const data = await response.json();
   
-      // Update the state to reflect the updated product without a page refresh
+      // Update the state to reflect the updated product without a page refresh the main
       set((state) => ({
         products: state.products.map((product) =>
           product.id === productId ? data : product

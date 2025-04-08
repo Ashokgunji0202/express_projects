@@ -5,15 +5,7 @@ export const useProductStore = create((set) => ({
   setProducts: (products) => set({ products }),
 
   createProduct: async (newProduct) => {
-    if (
-      !newProduct.name ||
-      !newProduct.price ||
-      !newProduct.image ||
-      !newProduct.description
-    ) {
-      return { success: false, message: 'All fields are required' };
-    }
-
+    
     try {
       const response = await fetch('/api/products', {
         method: 'POST',
@@ -35,4 +27,56 @@ export const useProductStore = create((set) => ({
       return { success: false, message: 'Something went wrong' };
     }
   },
-}));
+  fetchProducts: async () => {
+    try {
+      const response = await fetch('/api/products/allproducts');
+      const data = await response.json();
+      set({ products: data.data });
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  },
+
+  deleteProduct: async (productId) => {
+    try {
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'DELETE',
+      });
+      const data = await response.json();
+
+      // Update the state to remove the deleted product without a page refresh
+      set((state) => ({
+        products: state.products.filter((product) => product.id !== productId),
+      }));
+      return { success: true, message: 'Product deleted successfully' };
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      return { success: false, message: 'Something went wrong' };
+    }
+  },
+  updateProduct: async (productId, updatedProduct) => {
+    try {
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedProduct),
+      });
+      const data = await response.json();
+  
+      // Update the state to reflect the updated product without a page refresh
+      set((state) => ({
+        products: state.products.map((product) =>
+          product.id === productId ? data : product
+        ),
+      }));
+  
+      return { success: true, message: 'Product updated successfully' };
+    } catch (error) {
+      console.error('Error updating product:', error);
+      return { success: false, message: 'Something went wrong' };
+    }
+  }
+
+}));  

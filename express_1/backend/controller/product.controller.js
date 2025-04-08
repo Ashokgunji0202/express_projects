@@ -17,8 +17,8 @@ export const createProduct = async (req, res) => {
 };
 export const getAllProducts = async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM products');
-    res.status(200).json(result.rows);
+    const result = await pool.query('SELECT * FROM products ORDER BY created_at DESC');
+    res.status(200).json({ data: result.rows });
   } catch (err) {
     console.log("Error "+err.message)
     res.status(500).json({ error: err.message });

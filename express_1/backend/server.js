@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());// allows to use to accept JSON data in the body
 
-app.use("/product",productRoutes);
+app.use("/api/products",productRoutes);
 
 
 app.listen(5000, () => {

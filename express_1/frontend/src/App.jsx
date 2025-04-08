@@ -10,7 +10,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 
 function App() {
   
-
+  //const {products} = useProductStore();
   return (
     
       <Box minH={"100vh"} bg={useColorModeValue('gray.100', 'gray.900')}>

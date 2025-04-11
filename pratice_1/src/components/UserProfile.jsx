@@ -6,7 +6,7 @@ const UserProfile = () => {
     return (
         <div id='user-profile'>
             <h1>Hello Profile Components</h1>
-            <UserName username="gunjiashok" age={20} isLoggedIn={false} />
+            <UserName username="gunjiAshok" age={20} isLoggedIn={false} />
             <div>
                 <p>Profile</p>
                 <span>Email : </span>

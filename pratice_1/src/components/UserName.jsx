@@ -5,8 +5,11 @@ import PropTypes from 'prop-types';
 const UserName = (props) => {
    // console.log(props);
   return (
-    <div>
-      <b>UserName: </b>
+    <React.Fragment>
+      <b style={{
+         color: 'red' ,
+        fontSize: '20px'
+        }}>UserName: </b>
       <span>{props.username}</span>
       <br />
       <b>age: </b>
@@ -14,7 +17,7 @@ const UserName = (props) => {
       <br />
       <b>IsloggedIn : </b>
       <span>{props.isLoggedIn ? 'true' : 'false'}</span>
-    </div>
+    </React.Fragment>
   )
 }
 UserName.propTypes = {

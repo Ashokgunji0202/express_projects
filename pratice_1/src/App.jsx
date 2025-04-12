@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import UserProfile from './components/UserProfile'
+import UserDetailsApi from './components/UserDetailsApi'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div>
         <h1>Hello world React </h1>
         <UserProfile />
+        <UserDetailsApi />
       </div>
     </>
   )

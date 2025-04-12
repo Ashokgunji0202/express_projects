@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import Styles from './Style.module.css'
+
 
 
 const UserName = (props) => {
    // console.log(props);
   return (
     <React.Fragment>
-      <b style={{
+      {/* <b style={{
          color: 'red' ,
-        fontSize: '20px'
-        }}>UserName: </b>
+        fontSize: '20px'     
+        }}>UserName: </b> */}
+      <b className={Styles.username} >UserName: </b>
       <span>{props.username}</span>
       <br />
-      <b>age: </b>
+      <b className={Styles.age}>age: </b>
       <span>{props.age}</span>
       <br />
       <b>IsloggedIn : </b>

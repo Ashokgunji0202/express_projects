@@ -33,12 +33,13 @@ const LoginForm = () => {
           borderRadius: '10px',
           padding: '10px',
           margin: '10px',
+          width: '500px',
         }}
       >
         <div>
           <h2>Login Form</h2>
         </div>
-        <div style={{ margin: '10px' }}>
+        <div style={{ margin: '10px'}}>
           <label htmlFor="userName">UserName :</label>
           <br />
           <input

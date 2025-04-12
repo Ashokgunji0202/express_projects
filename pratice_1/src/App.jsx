@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import React from 'react'
 import UserProfile from './components/UserProfile'
 import UserDetailsApi from './components/UserDetailsApi'
 import ConductionalRen from './components/ConductionalRen'
 import VerfiedUser from './components/VerfiedUser'
 import LoginForm from './components/LoginForm'
+import CounterUseState from './components/CounterUseState'
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
       <div>
@@ -18,9 +18,13 @@ function App() {
         <UserDetailsApi />
         <ConductionalRen />
         <VerfiedUser />
+        
       </div>
       <div>
         <LoginForm />
+      </div>
+      <div>
+      <CounterUseState />
       </div>
     </>
   )

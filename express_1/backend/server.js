@@ -1,7 +1,5 @@
 // deno-lint-ignore-file
 import express from "express";
-import { connectDB } from "./config/db.js";
-import { createProductTable } from "./models/product.model.js";
 import productRoutes from "./routes/product.route.js";
 
 
@@ -16,8 +14,8 @@ app.use("/api/products",productRoutes);
 
 
 app.listen(5000, () => {
-    connectDB();
-    createProductTable();
+   // connectDB();
+    //createProductTable();
     console.log(`Server is running on port http://localhost:5000`);
 });
 //MDW6VwKnS5Vsb9tT

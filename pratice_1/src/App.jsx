@@ -1,10 +1,11 @@
 import React from 'react'
-import UserProfile from './components/UserProfile'
-import UserDetailsApi from './components/UserDetailsApi'
-import ConductionalRen from './components/ConductionalRen'
-import VerfiedUser from './components/VerfiedUser'
+// import UserProfile from './components/UserProfile'
+// import UserDetailsApi from './components/UserDetailsApi'
+// import ConductionalRen from './components/ConductionalRen'
+// import VerfiedUser from './components/VerfiedUser'
 import LoginForm from './components/LoginForm'
 import CounterUseState from './components/CounterUseState'
+import UserDetails from './components/userDetails/UserDetails'
 
 
 
@@ -14,10 +15,10 @@ function App() {
     <>
       <div>
         <h1>Hello world React </h1>
-        <UserProfile />
+        {/* <UserProfile />
         <UserDetailsApi />
         <ConductionalRen />
-        <VerfiedUser />
+        <VerfiedUser /> */}
         
       </div>
       <div>
@@ -25,6 +26,9 @@ function App() {
       </div>
       <div>
       <CounterUseState />
+      </div>
+      <div>
+        <UserDetails />
       </div>
     </>
   )

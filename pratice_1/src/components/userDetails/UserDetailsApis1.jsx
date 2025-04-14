@@ -12,6 +12,7 @@ const UserDetailsApis1 = ({ user, setUsers }) => {
                         setIsEdition(currentState => !currentState);
                     }}>Edit
                 </button>
+{/*                 <button onClick={() => console.log(user)}>Delete</button> */}
                 <button onClick={() => setUsers(users => users.filter(u => u.id !== user.id))}>Delete</button>
 
 

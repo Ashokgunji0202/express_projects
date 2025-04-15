@@ -6,6 +6,7 @@ import React from 'react'
 import LoginForm from './components/LoginForm'
 import CounterUseState from './components/CounterUseState'
 import UserDetails from './components/userDetails/UserDetails'
+import UserDetailsUseEffect from './components/useEffectsfunction/UserDetailsUseEffect'
 
 
 
@@ -21,7 +22,7 @@ function App() {
         <VerfiedUser /> */}
         
       </div>
-      <div>
+      {/* <div>
         <LoginForm />
       </div>
       <div>
@@ -29,6 +30,11 @@ function App() {
       </div>
       <div>
         <UserDetails />
+      </div> */}
+
+
+      <div>
+        <UserDetailsUseEffect/>
       </div>
     </>
   )

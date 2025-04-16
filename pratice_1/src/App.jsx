@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm'
 import CounterUseState from './components/CounterUseState'
 import UserDetails from './components/userDetails/UserDetails'
 import UserDetailsUseEffect from './components/useEffectsfunction/UserDetailsUseEffect'
+import UserDetailsPost from './components/useEffectsfunction/UserDetailsPost'
 
 
 
@@ -35,6 +36,11 @@ function App() {
 
       <div>
         <UserDetailsUseEffect/>
+      </div>
+      <br />
+      <br/>
+      <div>
+        <UserDetailsPost/>
       </div>
     </>
   )

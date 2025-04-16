@@ -1,4 +1,4 @@
-import React,{ useState,useEffect, use} from 'react'
+import React,{ useState,useEffect} from 'react'
 
 const UserDetailsUseEffect = () => {
 
@@ -12,9 +12,22 @@ const UserDetailsUseEffect = () => {
     },[sync]);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users`,{
-            method:"GET"
-        }).then((res) => res.json()).then((data) => console.log(data));
+        const controller=new AbortController();
+        async function fetchData() {
+            try{
+                const res =await fetch('https://jsonplaceholder.typicode.com/users',{
+                    signal:controller.signal
+                });
+                const json=await res.json();
+                console.log(json);
+            }catch(error){
+                console.log(error);
+            }
+        }
+        fetchData();
+        return () =>{
+            controller.abort();
+        }
     },[])
   return (
     <div>

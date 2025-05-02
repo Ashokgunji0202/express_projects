@@ -3,7 +3,7 @@ import { UserContext } from '../utils/contexts/UserContext'
 
 const PostContainerButton = ({data}) => {
 
-  const use = React.useContext(UserContext)
+  const use = useContext(UserContext)
   return (
     <div>
         {use.id}

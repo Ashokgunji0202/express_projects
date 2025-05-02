@@ -49,12 +49,12 @@ function App() {
 
         <PostContainer />
       </div>
-    <UserContext.Provider value={{id:1,username:"gunji",email:"gunjiashok107@gmail.com",displayname:"gunji"}}>
-      <div>
-        <PostContainer />
-      </div>
+      <UserContext.Provider value={{ id: 1, username: "gunji", email: "gunjiashok107@gmail.com", displayname: "gunji" }}>
+        <div>
+          <PostContainer />
+        </div>
 
-    </UserContext.Provider>
+      </UserContext.Provider>
 
 
     </>
